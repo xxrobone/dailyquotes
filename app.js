@@ -65,5 +65,5 @@ btn.addEventListener('click', () => {
   typeWriter();
   setTimeout(() => {
     location.reload();
-  }, 8000);
+  }, 10000);
 });
