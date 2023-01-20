@@ -1,0 +1,128 @@
+:root {
+    --bg: #181818;
+    --color: #eedede;
+    --gr-clr-nature: ;
+    --gr-clr-black-gradient: linear-gradient(to right, #040404, #000000, #656565);
+    --gr-clr-gold: linear-gradient(to right, #BF953F, #FCF6BA, #B38728, #FBF5B7, #AA771C);
+    --gr-clr-pinkdreams: linear-gradient(to right, #FFA69E, #861657);
+    --gr-clr-lightgreen: linear-gradient(315deg, #7cffcb 0%, #74f2ce 74%);
+    --gr-clr-forest: linear-gradient(315deg, #63d471 0%, #233329 74%);
+    --gr-clr-forestfall: linear-gradient(315deg, #f2cf43 0%, #19a186 74%);
+    --gr-clr-sunrise: linear-gradient(315deg, #ff4e00 0%, #ec9f05 74%);
+    --gr-clr-desert: linear-gradient(315deg, #772f1a 0%, #f2a65a 74%);
+    
+
+    
+    
+
+    --clr-1: #A3D69A;
+    --clr-2: #A7BC8A;
+    --clr-3: #ABA27B;
+    --clr-4: #AE876B;
+    --clr-5: #B26D5B;
+
+    
+
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    width: 100%;
+    height: 100vh;
+    display: grid;
+    place-content: center;
+    background: var(--gr-clr-pinkdreams);
+    overflow-x: hidden;
+   
+}
+
+main {
+    width: 80%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+img {
+    width: 100%;
+    min-height: 400px;
+    height: auto;
+    object-fit: cover;
+}
+
+button {
+    position: fixed;
+    left: 20%;
+    top: 20%;
+    outline: none;
+    padding: 10px;
+    font-size: 1rem;
+    background: var(--gr-clr-forestfall);
+    transform: rotate(10deg) skewX(25deg) translate(0,0);
+    transition: 0.5s;
+    box-shadow: -20px 20px 10px rgba(0,0,0,0.5);
+}
+
+button:before {
+    content: '';
+    position: absolute;
+    top: 10px;
+    left: -22px;
+    height: 106%;
+    width: 20px;
+    background: var(--gr-clr-forest);
+    transform: 0.5;
+    transform: rotate(0deg) skewY(-45deg);
+
+}
+button:after {
+    content: '';
+    position: absolute;
+    bottom: -22px;
+    height: 20px;
+    width: 102%;
+    left: -12px;
+    background: var(--gr-clr-lightgreen);
+    transform: 0.5;
+    transform: rotate(0deg) skewX(-45deg);
+    
+}
+
+button:hover {
+    transform: rotate(10deg) skew(25deg) translate(30px, -20px);
+    box-shadow: -50px 50px 50px rgba(0,0,0,0.5);
+    cursor: pointer;
+}
+button:active {
+    transform: rotate(10deg) skewX(25deg) translate(0,0);
+    box-shadow: -20px 20px 10px rgba(0,0,0,0.5);
+}
+
+.quote_wrapper {
+    margin: 0 auto;
+    position: absolute;
+    top: 35%;
+    width: 60%;
+}
+
+footer {
+    position: absolute;
+    width: 100%;
+    height: 60px;
+    bottom: 0;
+    left: 0;
+    display: grid;
+    place-content: center;
+}
+
+@media(min-width: 768px) {
+    .quote_wrapper {
+        left: 60%;
+    }
+}

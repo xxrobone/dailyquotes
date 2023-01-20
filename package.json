@@ -1,0 +1,23 @@
+{
+  "name": "dailyquotes",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/xxrobone/dailyquotes.git"
+  },
+  "keywords": [
+    "quotes",
+    "roger"
+  ],
+  "author": "robert wagar",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/xxrobone/dailyquotes/issues"
+  },
+  "homepage": "https://github.com/xxrobone/dailyquotes#readme"
+}
