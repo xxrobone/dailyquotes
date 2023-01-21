@@ -1,11 +1,31 @@
 import { randomQuotes } from './db.js';
-/* const base_url = 'https://type.fit/api/quotes';
-const single_quote_url = '';
- */
-console.log(randomQuotes.length);
+
+/* console.log(randomQuotes.length); */
 
 const btn = document.querySelector('.btn');
+const h = document.querySelector('h1');
 let quote = document.querySelector('.quote');
+const body = document.body;
+
+btn.addEventListener('mouseenter', () => {
+  body.style.background =
+    'linear-gradient( 99.9deg, rgba(27,24,31,1) 21.2%, rgba(50,4,89,1) 84.8% )';
+  quote.style.color = '#ededed';
+  h.style.color = '#ededed';
+});
+
+btn.addEventListener('touchstart', () => {
+  body.style.background =
+    'linear-gradient( 99.9deg, rgba(27,24,31,1) 21.2%, rgba(50,4,89,1) 84.8% )';
+  quote.style.color = '#ededed';
+  h.style.color = '#ededed';
+});
+
+btn.addEventListener('touchend', () => {
+  body.style.background = 'linear-gradient(to right, #FFA69E, #861657)';
+  quote.style.color = '#181818';
+  h.style.color = '#181818';
+});
 
 const randomQuote = (array) => {
   let theQuote;
@@ -26,32 +46,16 @@ const randomQuote = (array) => {
   return theQuote;
 };
 
-/* 
-async function getapi(url) {
-  const response = await fetch(url);
-  var data = await response.json();
-  console.log(data);
-} */
-/* 
-getapi(base_url); */
-/* 
-async function getSingleQuote(url) {
-  const response = await fetch(url);
-  var data = await response.json();
-  console.log(data);
-}
-
-getSingleQuote(single_quote_url); */
 let dailyQuote;
 function getQuote() {
   dailyQuote = randomQuote(randomQuotes);
 }
 var i = 0;
 var text;
-var speed = 50; /* The speed/duration of the effect in milliseconds */
+var speed = 50;
 
 function typeWriter() {
-  text = dailyQuote; /* The text */
+  text = dailyQuote;
   if (i < text.length) {
     quote.innerHTML += text.charAt(i);
     i++;
@@ -65,5 +69,43 @@ btn.addEventListener('click', () => {
   typeWriter();
   setTimeout(() => {
     location.reload();
-  }, 10000);
+  }, 8000);
 });
+
+// create a sky with stars
+
+function addStarsLoop(i) {
+  var i = i;
+  while (i) {
+    // calling the create star element function
+    createStarElements();
+    i -= 1;
+  }
+}
+
+function createStarElements() {
+  var star = document.createElement('span');
+  star.className = 'star';
+  star.style.top = 100 * Math.random() + '%';
+  star.style.left = 100 * Math.random() + '%';
+  document.querySelector('.underlay').appendChild(star);
+}
+let stars;
+// getting all the stars from the dom that is created
+function getAllStars() {
+  stars = document.querySelectorAll('.star');
+  /* console.log(stars) */
+}
+
+function animate() {
+  Array.prototype.forEach.call(stars, function (el, i) {
+    TweenMax.to(el, Math.random() * 0.5 + 0.5, {
+      opacity: Math.random(),
+      onComplete: animate,
+    });
+  });
+}
+
+addStarsLoop(200);
+getAllStars();
+/* animate(); */
