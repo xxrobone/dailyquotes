@@ -21,6 +21,11 @@ btn.addEventListener('touchstart', () => {
   h.style.color = '#ededed';
 });
 
+btn.addEventListener('mouseleave', () => {
+  body.style.background = 'linear-gradient(to right, #FFA69E, #861657)';
+  quote.style.color = '#181818';
+  h.style.color = '#181818';
+});
 btn.addEventListener('touchend', () => {
   body.style.background = 'linear-gradient(to right, #FFA69E, #861657)';
   quote.style.color = '#181818';
@@ -65,9 +70,11 @@ function typeWriter() {
 
 btn.addEventListener('click', () => {
   quote.textContent = '';
+  animate();
   getQuote();
   typeWriter();
   setTimeout(() => {
+    animate.remove;
     location.reload();
   }, 8000);
 });
@@ -106,6 +113,5 @@ function animate() {
   });
 }
 
-addStarsLoop(200);
+addStarsLoop(140);
 getAllStars();
-/* animate(); */
