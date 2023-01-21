@@ -79,13 +79,13 @@ main {
 
 h1 {
     margin: 2rem auto;
-    font-size: clamp(1.3rem, 4vw, 5rem);
+    font-size: clamp(1rem, 3vw, 4rem);
     font-family: Blanka;
 }
 
 img {
     position: fixed;
-    top: 30%;
+    top: 40vh;
     width: 220px;
     height: auto;
     height: auto;
@@ -100,7 +100,7 @@ button {
     padding: 0.5rem 1rem;  
     position: relative;
     display: block;   
-    font-size: 0.8rem;
+    font-size: 0.6rem;
     color: #fff;
     background-color: transparent;
     text-decoration: none;
@@ -122,10 +122,14 @@ button:hover {
 }
 
 .quote_wrapper {
-    font-family: 'Trispace', sans-serif;
     margin: 1rem auto 0.5rem;
     position: relative;
     width: 80%;
+}
+
+.quote {
+    font-family: 'Trispace', sans-serif;
+    font-size: 0.8rem;
 }
 
 footer {
@@ -155,7 +159,7 @@ footer {
     button {
         margin: 2rem auto 0.25rem; 
         padding: 1rem 1.5rem;  
-        font-size: 0.8rem;
+        font-size: 1rem;
         letter-spacing: 4px; 
     }
 
