@@ -10,25 +10,21 @@ const body = document.body;
 btn.addEventListener('mouseenter', () => {
   body.style.background =
     'linear-gradient( 99.9deg, rgba(27,24,31,1) 21.2%, rgba(50,4,89,1) 84.8% )';
-  quote.style.color = '#ededed';
   h.style.color = '#ededed';
 });
 
 btn.addEventListener('touchstart', () => {
   body.style.background =
     'linear-gradient( 99.9deg, rgba(27,24,31,1) 21.2%, rgba(50,4,89,1) 84.8% )';
-  quote.style.color = '#ededed';
   h.style.color = '#ededed';
 });
 
 btn.addEventListener('mouseleave', () => {
   body.style.background = 'linear-gradient(to right, #FFA69E, #861657)';
-  quote.style.color = '#181818';
   h.style.color = '#181818';
 });
 btn.addEventListener('touchend', () => {
   body.style.background = 'linear-gradient(to right, #FFA69E, #861657)';
-  quote.style.color = '#181818';
   h.style.color = '#181818';
 });
 
