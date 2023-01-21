@@ -40,7 +40,7 @@ body {
     width: 100%;
     height: 100vh;
     background: var(--gr-clr-pinkdreams);
-    overflow-x: hidden;
+    overflow: hidden;
 }
 /* 
 .bg_animation {
@@ -50,13 +50,15 @@ body {
 
 /* background */
 .underlay {
-    position: absolute;
+    position: fixed;
     top: 0;
     right: 0;
     bottom: 0;
     left: 0;
     height: 100%;
     width: 100%;
+    z-index: 2;
+    pointer-events: none;
 }
 
 .star {
@@ -82,10 +84,11 @@ h1 {
 }
 
 img {
-    position: absolute;
-    bottom: 0;
-    min-width: 300px;
-    max-width: 500px;
+    position: fixed;
+    top: auto;
+    bottom: 60px;
+    min-width: 200px;
+    max-width: 400px;
     height: 200px;
     height: auto;
     object-fit: cover;
@@ -95,7 +98,7 @@ img {
 
 
 button {
-    margin: 4rem 0 0; 
+    margin: 2rem auto 0.25rem; 
     padding: 1rem 1.5rem;  
     position: relative;
     display: block;   
@@ -107,10 +110,9 @@ button {
     transition: all 0.5s ease;
     letter-spacing: 4px;
     cursor: pointer;
-    overflow: hidden;
-    
-   
+    overflow: hidden;   
 }
+
 button:hover {
     background: #a992e4c7;
     color: #050801;
@@ -124,13 +126,13 @@ button:hover {
 .quote_wrapper {
     font-family: 'Trispace', sans-serif;
     margin: 1rem auto 0.5rem;
-    position: absolute;
-    top: 35%;
-    width: 60%;
+    position: relative;
+    width: 80%;
 }
 
 footer {
-    position: absolute;
+    padding: 0.5rem 1rem;
+    position: fixed;
     width: 100%;
     height: 60px;
     bottom: 0;
@@ -151,7 +153,7 @@ footer {
 
 @media screen and (min-width: 768px) {
     img {
-        position: absolute;
+        position: fixed;
         bottom: 0;
         min-width: 500px;
         max-width: 800px;
