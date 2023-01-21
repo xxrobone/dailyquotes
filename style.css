@@ -42,10 +42,10 @@ body {
     background: var(--gr-clr-pinkdreams);
     overflow-x: hidden;
 }
-
+/* 
 .bg_animation {
     transition: background cubic-bezier(.57,.21,.69,1.25) forwards 0.3s;
-}
+} */
 
 
 /* background */
