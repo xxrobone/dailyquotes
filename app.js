@@ -70,13 +70,15 @@ function typeWriter() {
 
 btn.addEventListener('click', () => {
   quote.textContent = '';
+  btn.setAttribute('disabled', true);
   animate();
   getQuote();
   typeWriter();
   setTimeout(() => {
+    btn.removeAttribute('disabled', false);
     animate.remove;
     location.reload();
-  }, 8000);
+  }, 10000);
 });
 
 // create a sky with stars
