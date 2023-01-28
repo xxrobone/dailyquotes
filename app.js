@@ -48,13 +48,15 @@ const randomQuote = (array) => {
 };
 
 let dailyQuote;
+
 function getQuote() {
   dailyQuote = randomQuote(randomQuotes);
 }
-var i = 0;
-var text;
-var speed = 50;
 
+let clicks = 0;
+let i = 0;
+let text = '';
+const speed = 40;
 function typeWriter() {
   text = dailyQuote;
   if (i < text.length) {
@@ -62,18 +64,39 @@ function typeWriter() {
     i++;
     setTimeout(typeWriter, speed);
   }
+  if (i === text.length) {
+    setTimeout(() => {
+      i = 0;
+    }, 1000);
+  }
 }
 
-btn.addEventListener('click', () => {
-  quote.textContent = '';
+btn.addEventListener('click', (e) => {
+  clicks++;
+  e.preventDefault();
+  quote.innerHTML = '';
   btn.setAttribute('disabled', true);
   animate();
   getQuote();
-  typeWriter();
+  // to let the get quote finnish, could do an async function
   setTimeout(() => {
-    btn.removeAttribute('disabled', false);
+    typeWriter();
+  }, 200);
+
+  let t;
+  if (clicks === 3 || clicks === 6) {
+    t = 'No worries I got quotes for days! 1 mo?';
+  } else {
+    t = 'One more Quote?';
+  }
+
+  setTimeout(() => {
+    btn.textContent = t;
+    btn.removeAttribute('disabled');
+  }, 5000);
+
+  setTimeout(() => {
     animate.remove;
-    location.reload();
   }, 10000);
 });
 

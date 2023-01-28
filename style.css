@@ -109,6 +109,7 @@ button {
     letter-spacing: 2px;
     cursor: pointer;
     overflow: hidden;   
+    transition: all 0.4s ease-out;
 }
 
 button:hover {
@@ -126,11 +127,12 @@ button:hover {
     position: relative;
     width: 80%;
     color: #d5d7ea;
+    text-align: center;
 }
 
 .quote {
     font-family: 'Trispace', sans-serif;
-    font-size: 0.8rem;
+    font-size: 0.8rem;    
     background-color: #181818;
 }
 
@@ -177,6 +179,10 @@ footer {
         padding: 1rem 1.5rem;  
         font-size: 1rem;
         letter-spacing: 4px; 
+    }
+
+    .quote_wrapper {
+        width: 60%;    
     }
 
     img {
